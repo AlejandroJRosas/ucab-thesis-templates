@@ -1,0 +1,52 @@
+\newcommand{\touppercase}[1]{\MakeUppercase{#1}}
+
+\newcommand{\universidad}{Universidad Católica Andrés Bello}
+\newcommand{\titulo}{Aplicación para Enseñanza de Conceptos Espaciales en Estudiantes de Ingeniería basada en Realidad Virtual \\}
+\newcommand{\estudiante}{Rosas Ordaz, Alejandro José}
+\newcommand{\tutor}{Lárez Mata, Jesús José}
+
+\newcommand{\membrete}{
+  \normalsize\selectfont
+  \touppercase{\universidad} \par
+  FACULTAD DE INGENIERÍA \par
+  ESCUELA DE INGENIERÍA INFORMÁTICA \par
+}
+
+\newcommand{\prelude}{
+  \textbf{Trabajo de Grado} \par
+  presentado ante la \par
+  \touppercase{\textbf{\universidad}} \par
+  como parte de los requisitos para optar al título de \par
+  \touppercase{\textbf{Ingeniero en Informática}} \par
+}
+
+\newcommand{\details}{
+  \begin{tabularx}{\textwidth}{X >{\hsize=1.35\hsize}X}
+    Realizado por & \estudiante \\
+    % \\
+    Tutor         & \tutor      \\
+    Fecha         & Abril, 2025 \\
+  \end{tabularx}
+}
+
+\begin{center}
+  \begin{figure}[h]
+    \centering
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=\textwidth]{ucab-escudo.jpg}
+    \end{minipage}
+    \begin{minipage}{0.7\textwidth}
+      \centering
+      \renewcommand{\baselinestretch}{1.5}
+      \membrete
+    \end{minipage}
+  \end{figure}
+  \vspace*{\fill}
+  \textbf{\titulo}
+  \vspace*{\fill}
+  \prelude
+  \vspace*{\fill}
+  \details
+\end{center}
+
+\clearpage

@@ -1,0 +1,127 @@
+{
+	// Latex Workshop
+	"latex-workshop.formatting.latex": "latexindent",
+	"latex-workshop.latex.clean.subfolder.enabled": true,
+	"latex-workshop.latex.build.rootfileInStatus": true,
+	"latex-workshop.latex.clean.fileTypes": [
+		"*.aux",
+		"%DOCFILE%.blg",
+		"%DOCFILE%.idx",
+		"%DOCFILE%.ind",
+		"%DOCFILE%.lof",
+		"%DOCFILE%.lot",
+		"%DOCFILE%.out",
+		"%DOCFILE%.toc",
+		"%DOCFILE%.acn",
+		"%DOCFILE%.acr",
+		"%DOCFILE%.alg",
+		"%DOCFILE%.glg",
+		"%DOCFILE%.glo",
+		"%DOCFILE%.gls",
+		"%DOCFILE%.fls",
+		"%DOCFILE%.log",
+		"%DOCFILE%.fdb_latexmk",
+		"%DOCFILE%.snm",
+		"%DOCFILE%.synctex",
+		"%DOCFILE%.synctex.gz",
+		"%DOCFILE%.nav",
+		"%DOCFILE%.vrb",
+		"%DOCFILE%.log",
+		"*.log"
+	],
+	"latex-workshop.latex.autoClean.run": "onBuilt",
+	"latex-workshop.latex.clean.method": "glob",
+	// TO-DO Tree
+	"todo-tree.tree.labelFormat": "${tag} ${after}",
+	"todo-tree.tree.flat": true,
+	"todo-tree.regex.enableMultiLine": true,
+	"todo-tree.tree.showCountsInTree": true,
+	"todo-tree.highlights.highlightDelay": 250,
+	"todo-tree.general.periodicRefreshInterval": 5,
+	"todo-tree.general.showActivityBarBadge": true,
+	"todo-tree.general.statusBar": "top three",
+	"todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+	"todo-tree.tree.buttons.export": true,
+	"todo-tree.highlights.useColourScheme": true,
+	"todo-tree.highlights.backgroundColourScheme": [],
+	"todo-tree.general.tags": [
+		"WARNING",
+		"TODO",
+		"NOTE",
+		"INFO",
+		"BUG",
+		"FIXME",
+		"WIP",
+		"TEST",
+    "QUESTION"
+	],
+	"todo-tree.highlights.foregroundColourScheme": [
+		"black",
+		"white",
+		"white",
+		"white",
+		"white",
+		"black",
+		"black",
+		"white",
+		"black"
+	],
+	"todo-tree.highlights.customHighlight": {
+		"TODO": {
+			"background": "#008000",
+			"rulerLane": "full"
+		},
+		"NOTE": {
+			"icon": "note",
+			"background": "#4b0082",
+			"rulerLane": "full"
+		},
+		"WARNING": {
+			"icon": "alert",
+			"background": "#ffa82a",
+			"rulerLane": "full"
+		},
+		"INFO": {
+			"icon": "info",
+			"background": "#3498DB",
+			"rulerLane": "full"
+		},
+		"BUG": {
+			"icon": "bug",
+			"background": "#ff0808",
+			"rulerLane": "full"
+		},
+		"FIXME": {
+			"icon": "tools",
+			"background": "#f79724",
+			"rulerLane": "full"
+		},
+		"WIP": {
+			"icon": "issue-draft",
+			"background": "#b3ff00",
+			"rulerLane": "full"
+		},
+		"TEST": {
+			"icon": "beaker",
+			"background": "#ff00ff",
+			"rulerLane": "full"
+		},
+    "QUESTION": {
+			"icon": "question",
+			"background": "#fccf0b",
+			"rulerLane": "full"
+		}
+	},
+	"todo-tree.regex.regex": "(//|#|<!--|;|/\\\\*|^%|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
+	"better-comments.tags": [
+		{ "tag": "todo", "color": "#00a600", "bold": true },
+		{ "tag": "note", "color": "#8d00f4", "bold": true },
+		{ "tag": "warning", "color": "#ffb629", "bold": true },
+		{ "tag": "info", "color": "#3498DB", "bold": true },
+		{ "tag": "bug", "color": "#ff4808", "bold": true },
+		{ "tag": "fixme", "color": "#ffc625", "bold": true },
+		{ "tag": "wip", "color": "#90ff00", "bold": true },
+		{ "tag": "test", "color": "#ff00dc", "bold": true },
+		{ "tag": "question", "color": "#fff10a", "bold": true }
+	]
+}

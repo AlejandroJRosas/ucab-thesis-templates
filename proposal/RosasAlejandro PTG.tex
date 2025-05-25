@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\linespread{1.5}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage[nottoc]{tocbibind}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{amssymb}
+\usepackage{placeins}
+
+% Formato de sangrías y listas
+\usepackage{enumitem}
+\renewcommand{\labelitemi}{$\bullet$}
+\setlength{\parindent}{0.3in}
+\setlist[itemize,1]{leftmargin=0.45in}
+\setlist[itemize]{leftmargin=0.2in}
+
+% Formato de la tabla de contenido
+\usepackage{tocloft}
+\setlocalecaption{spanish}{contents}{Índice de Contenido}
+\renewcommand{\cfttoctitlefont}{\hfill\normalsize\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftbeforesubsubsecskip}{0pt}
+
+% Formato de números de páginas
+\usepackage{fancyhdr}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\fancypagestyle{heading}{
+  \fancyhf{}
+  \fancyhead[L]{\includegraphics[width=0.4\textwidth]{ucab-logo.png}}
+}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+}
+\renewcommand{\headrulewidth}{0pt}
+
+% Formato de los diferentes niveles de secciones
+\usepackage{titlesec}
+\setcounter{secnumdepth}{5}
+\titleformat{\section}{\normalsize\bfseries\centering}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\narrower}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\normalsize\bfseries\itshape\narrower}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}{\normalsize\itshape}{\thesubparagraph}{1em}{}
+
+% Formato de la bibliografía
+\usepackage{apacite}
+\bibliographystyle{apacite}
+
+% Formato para evitar la separación de palabras 
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% Comandos para crear secciones no numeradas con entrada en el índice
+\newcommand{\usection}[1]{
+  \phantomsection
+  \section*{#1}
+  \addcontentsline{toc}{section}{#1}
+}
+\newcommand{\usubsection}[1]{
+  \phantomsection
+  \subsection*{#1}
+  \addcontentsline{toc}{subsection}{#1}
+}
+\newcommand{\usubsubsection}[1]{
+  \phantomsection
+  \subsubsection*{#1.}
+  % \addcontentsline{toc}{subsubsection}{#1}
+}
+\newcommand{\uparagraph}[1]{
+  \phantomsection
+  \paragraph*{#1.}
+  \addcontentsline{toc}{paragraph}{#1}
+}
+\newcommand{\usubparagraph}[1]{
+  \phantomsection
+  \subparagraph*{#1.}
+  \addcontentsline{toc}{subparagraph}{#1}
+}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+
+\pagestyle{heading}
+\pagenumbering{gobble}
+\input{content/0.portada}
+
+\input{spreadsheets/academic-tutor-acceptance-letter}
+\input{spreadsheets/proposal-summary}
+\input{spreadsheets/revision-history}
+
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{content/1.planteamiento}
+\input{content/2.objetivos}
+\input{content/3.alcance}
+\input{content/4.limitaciones}
+\input{content/5.justificacion}
+\input{content/6.marco-referencial}
+\input{content/7.metodologia}
+\input{content/8.cronograma-trabajo}
+
+\phantomsection
+\bibliography{references}
+
+\end{document}

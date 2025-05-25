@@ -1,0 +1,102 @@
+% Descripción detallada de la planificación del proyecto. Por cada objetivo específico: descripción de tareas a realizar para alcanzarlo, destacando producto y su distribución en el tiempo; aquí se definen actividades y entregables a medida que el proyecto avanza; ver Anexo A2 – Ejemplo Referencial de Cronograma de Actividades
+\usection{Cronograma de Trabajo}
+
+% Color Column
+\newcommand{\cc}{\cellcolor[HTML]{4bacc6}}
+\newcolumntype{L}{>{\raggedright\arraybackslash\hsize=.435\hsize}X}
+\newcolumntype{S}{>{\centering\arraybackslash\hsize=.045\hsize}X}
+
+\newcommand{\tableObjective}[2]{
+  \vspace{-2em}
+  \begin{table}[!ht]
+    \begin{tabularx}{\textwidth}{|X|}
+      \hline
+      \textbf{#1.} #2 \\
+      \hline
+    \end{tabularx}
+  \end{table}
+  \FloatBarrier
+  \vspace{-2em}
+}
+
+\newcommand{\workScheduleHeader}{
+  \begin{table}[!ht]
+    \onehalfspacing
+    \hfill
+    \begin{tabularx}{0.63\textwidth}{|X|}
+      \hline
+      \centering\arraybackslash\textbf{Bloque Semanal (2 Semanas / Bloque)} \\
+      \hline
+    \end{tabularx}
+  \end{table}
+  \vspace{-2em}
+  \begin{table}[!ht]
+    \onehalfspacing
+    \begin{tabularx}{\textwidth}{|L|S|S|S|S|S|S|S|S|S|S|}
+      \hline
+      \centering\arraybackslash\textbf{Actividades por Objetivo} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} \\
+      \hline
+    \end{tabularx}
+  \end{table}
+}
+
+\workScheduleHeader
+\tableObjective{1}{\oeOne}
+\begin{table}[!ht]
+  \begin{tabularx}{\textwidth}{|L|S|S|S|S|S|S|S|S|S|S|}
+    \hline
+    Analizar la situación que presentan los estudiantes de ingeniería al abordar conceptos espaciales para identificar necesidades y requerimientos generales en la aplicación. & \cc & \cc &     &  &  &  &  &  &  & \\
+    \hline
+    Definir los requerimientos funcionales y no funcionales de la aplicación a desarrollar con respecto al análisis general hecho anteriormente.                                &     &     & \cc &  &  &  &  &  &  & \\
+    \hline
+  \end{tabularx}
+\end{table}
+\tableObjective{2}{\oeTwo}
+\begin{table}[!ht]
+  \begin{tabularx}{\textwidth}{|L|S|S|S|S|S|S|S|S|S|S|}
+    \hline
+    Diseñar la arquitectura y la interfaz de usuario de la aplicación. &  &  & \cc & \cc &  &  &  &  &  & \\
+    \hline
+    Diseñar la lógica y funcionalidad de la aplicación.                &  &  & \cc & \cc &  &  &  &  &  & \\
+    \hline
+    Diseñar protocolo de pruebas.                                      &  &  & \cc & \cc &  &  &  &  &  & \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+\tableObjective{3}{\oeThree}
+\begin{table}[!ht]
+  \begin{tabularx}{\textwidth}{|L|S|S|S|S|S|S|S|S|S|S|}
+    \hline
+    Implementar módulos definidos, de acuerdo al diseño realizado. &  &  &  &  & \cc & \cc & \cc & \cc &  & \\
+    \hline
+    Aplicar protocolo de pruebas diseñado.                         &  &  &  &  & \cc & \cc & \cc & \cc &  & \\
+    \hline
+    Realizar ajustes de acuerdo a pruebas realizadas.              &  &  &  &  & \cc & \cc & \cc & \cc &  & \\
+    \hline
+  \end{tabularx}
+\end{table}
+\clearpage
+\workScheduleHeader
+\tableObjective{4}{\oeFour}
+\begin{table}[!ht]
+  \begin{tabularx}{\textwidth}{|L|S|S|S|S|S|S|S|S|S|S|}
+    \hline
+    Realizar pruebas y validación con usuarios.           &  &  &  &  &  &  &  &  & \cc & \\
+    \hline
+    Realizar ajustes de acuerdo a validación de usuarios. &  &  &  &  &  &  &  &  & \cc & \\
+    \hline
+  \end{tabularx}
+\end{table}
+\tableObjective{5}{\oeFive}
+\begin{table}[ht!]
+  \begin{tabularx}{\textwidth}{|L|S|S|S|S|S|S|S|S|S|S|}
+    \hline
+    Realizar documentación técnica.    &  &  &  &  &  &  & \cc & \cc & \cc & \cc \\
+    \hline
+    Realizar documentación de usuario. &  &  &  &  &  &  &     &     & \cc & \cc \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+\clearpage

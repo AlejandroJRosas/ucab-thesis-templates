@@ -1,8 +1,22 @@
+\titleformat{\chapter}
+{\normalfont\fontsize{12}{15}\centering}{Apéndice \thechapter.}{0.3em}{}[]
+
 \clearpage
 \thispagestyle{empty}
 \begin{center}
   \vspace*{\fill}
-  \textbf{Apéndices}
+  \phantomsection
+  Apéndices
+  \addcontentsline{toc}{chapter}{Apéndices}
   \vspace*{\fill}
 \end{center}
 \clearpage
+
+\appendix
+\uextra{Apéndice}{Título del Apéndice A}
+
+\lipsum[15]
+
+\uextra{Apéndice}{Title of Appendix B}
+
+\lipsum[16]

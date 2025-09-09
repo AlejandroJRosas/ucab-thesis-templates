@@ -1,0 +1,27 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Azuma%
+}{%
+Azuma%
+}{%
+{\protect \APACyear {1997}}%
+}]{%
+azuma1997survey}
+\APACinsertmetastar {%
+azuma1997survey}%
+\begin{APACrefauthors}%
+Azuma, R\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A survey of augmented reality} {A survey of augmented
+  reality}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Presence: Teleoperators and Virtual
+  Environments}{6}{4}{355--385}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

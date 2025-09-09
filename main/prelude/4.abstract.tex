@@ -1,0 +1,16 @@
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \small
+  \textbf{\textit{Palabras clave---}} #1
+}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Resumen}
+\begin{abstract}
+  \thispagestyle{plain}
+  \setcounter{page}{\value{abstractpage}}
+  \lipsum[1]
+
+  \keywords{Lorem ipsum, dolor sit amet, consectetur, adipiscing elit.}
+\end{abstract}

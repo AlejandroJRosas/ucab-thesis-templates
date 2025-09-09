@@ -8,9 +8,14 @@
 \linespread{1.5}
 \usepackage{tabularx}
 \usepackage[nottoc]{tocbibind}
-\usepackage[colorlinks=true, linkcolor=black, citecolor=black]{hyperref}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
 \usepackage{apacite}
 \bibliographystyle{apacite}
+\usepackage{lipsum} % For placeholder text
+
+% Formato para los capítulos
+\usepackage{titlesec}
+\titlespacing{\chapter}{0pt}{0pt}{40pt}
 
 % Formato para evitar la separación de palabras 
 \tolerance=1
@@ -22,16 +27,19 @@
 \usepackage{fancyhdr}
 \fancyhf{}
 \setlength{\headheight}{15pt}
+
 \fancypagestyle{prelude}{
-  \fancyhf{}
-  \fancyfoot[C]{\thepage}
-  \pagenumbering{roman}
-  \setcounter{page}{1}
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
 }
+
 \fancypagestyle{plain}{
   \fancyhf{}
   \fancyhead[R]{\thepage}
 }
+
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\thechapter}{\Roman{chapter}}
 
@@ -44,18 +52,26 @@
 
 % Formato de la tabla de contenido
 \usepackage{tocloft}
-\setlocalecaption{spanish}{contents}{Índice de Contenido}
+\addto\captionsspanish{
+  \renewcommand{\contentsname}{Índice de Contenido}
+  \renewcommand{\listfigurename}{Índice de Figuras}
+  \renewcommand{\listtablename}{Índice de Tablas}
+}
 \renewcommand{\cfttoctitlefont}{\hfill\normalsize\bfseries}
 \renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\normalsize\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\normalsize\bfseries}
+\renewcommand{\cftafterlottitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{-20pt}
+\setlength{\cftbeforeloftitleskip}{-20pt}
+\setlength{\cftbeforelottitleskip}{-20pt}
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
 % TOC Chapter Style
 \cftpagenumbersoff{chapter}
 \setlength{\cftbeforechapskip}{5pt}
-\renewcommand{\cftchapaftersnum}{.}
-\renewcommand{\cftchappresnum}{\upper{Capítulo} }
-\renewcommand{\cftchapnumwidth}{7.25em}
 
 % TOC Sections Style
 \setlength{\cftsecindent}{0pt}
@@ -65,20 +81,31 @@
 
 % Formato de los diferentes niveles de secciones
 \newcommand{\upper}[1]{\uppercase{#1}}
-\newcommand{\adddot}[1]{#1.}
 \usepackage{titlesec}
 \titleformat{\chapter}
-{\normalfont\fontsize{12}{15}\bfseries\centering}{\upper{Capítulo \thechapter}.}{0.3em}{\bigbreak\upper}[\thispagestyle{empty}]
+{\normalfont\fontsize{12}{15}\bfseries\centering}{}{0.3em}{\upper}[\thispagestyle{empty}]
 \titleformat{\section}
 {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
-{\normalfont\fontsize{12}{15}\bfseries\narrower}{\thesubsection}{1em}{\adddot}
+{\normalfont\fontsize{12}{15}\bfseries\narrower}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}
-{\normalfont\fontsize{12}{15}\bfseries\itshape\narrower}{\thesubsubsection}{1em}{\adddot}
+{\normalfont\fontsize{12}{15}\bfseries\itshape\narrower}{\thesubsubsection}{1em}{}
 \titleformat{\paragraph}
-{\normalfont\fontsize{12}{15}\itshape\narrower}{\theparagraph}{1em}{\adddot}
+{\normalfont\fontsize{12}{15}\itshape\narrower}{\theparagraph}{1em}{}
 
 % Comandos para crear secciones no numeradas con entrada en el índice
+\newcommand{\uchapter}[1]{
+  \addtocounter{chapter}{1}
+  \phantomsection
+  \chapter*{Capítulo \thechapter. {#1}}
+  \addcontentsline{toc}{chapter}{Capítulo \thechapter. {#1}}
+}
+\newcommand{\uextra}[2]{
+  \addtocounter{chapter}{1}
+  \phantomsection
+  \chapter*{{#1} \thechapter. {#2}}
+  \addcontentsline{toc}{chapter}{{#1} \thechapter. {#2}}
+}
 \newcommand{\usection}[1]{
   \phantomsection
   \section*{#1}
@@ -86,7 +113,7 @@
 }
 \newcommand{\usubsection}[1]{
   \phantomsection
-  \subsection*{#1}
+  \subsection*{#1.}
   \addcontentsline{toc}{subsection}{#1}
 }
 \newcommand{\usubsubsection}[1]{
@@ -103,11 +130,26 @@
 \begin{document}
 
 \pagenumbering{gobble}
-\input{prelude/portada}
+\input{prelude/_index}
+
+% Guardar el número de página actual
+\newcounter{pags}
+\setcounter{pags}{\value{page}}
 
 \pagestyle{prelude}
+\pagenumbering{roman}
+\setcounter{page}{\value{pags}}
 \tableofcontents
 \clearpage
+\listoftables
+\clearpage
+\listoffigures
+\clearpage
+
+\newcounter{abstractpage}
+\setcounter{abstractpage}{\value{page}}
+
+\input{prelude/4.abstract}
 
 \pagestyle{plain}
 \pagenumbering{arabic}
@@ -119,9 +161,9 @@
 \input{content/chapter.4/_index}
 \input{content/chapter.5/_index}
 
-\input{appendix/_index}
-
 \phantomsection
 \bibliography{references}
+
+\input{appendix/_index}
 
 \end{document}

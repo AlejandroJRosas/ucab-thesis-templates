@@ -1,4 +1,3 @@
-% Keywords command
 \providecommand{\keywords}[1]
 {
   \small
@@ -7,10 +6,30 @@
 
 \phantomsection
 \addcontentsline{toc}{chapter}{Resumen}
-\begin{abstract}
-  \thispagestyle{plain}
-  \setcounter{page}{\value{abstractpage}}
-  \lipsum[1]
+\setcounter{page}{\value{abstractpage}}
+\begin{center}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{ucab-logo.png} \\
+    \centering
+    \renewcommand{\baselinestretch}{1.5}
+    \membrete
+    {
+      \textbf{\titulo}
+    }
+  \end{figure}
+  \begin{table}[h!]
+    \onehalfspacing
+    \raggedleft
+    \begin{tabular}{r l}
+      Autor:           & \estudiante \\
+      Tutor Académico: & \tutor      \\
+      Fecha:           & \fecha      \\
+    \end{tabular}
+  \end{table}
+  \textbf{Resumen} \\
+\end{center}
 
-  \keywords{Lorem ipsum, dolor sit amet, consectetur, adipiscing elit.}
-\end{abstract}
+\lipsum[1-2]
+
+\keywords{---}

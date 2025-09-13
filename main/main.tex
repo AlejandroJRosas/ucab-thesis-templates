@@ -7,11 +7,10 @@
 \newcounter{pags}
 \setcounter{pags}{\value{page}}
 
-\pagestyle{prelude}
+\pagestyle{plain}
 \pagenumbering{roman}
 \setcounter{page}{\value{pags}}
 
-% NOTE - Esto sería perfecto si tan solo pusiera el número en la parte de abajo pero bueh se queda así el formato está bello
 \tableofcontents
 \clearpage
 \listoftables
@@ -23,7 +22,12 @@
 \setcounter{abstractpage}{\value{page}}
 
 \input{prelude/4.abstract}
+\clearpage
 
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+}
 \pagestyle{plain}
 \pagenumbering{arabic}
 \setcounter{page}{1}

@@ -4,12 +4,13 @@
 \newcommand{\titulo}{Título Trabajo de grado \\}
 \newcommand{\estudiante}{Apellidos del estudiante, Nombres del estudiante }
 \newcommand{\tutor}{Apellidos del tutor, Nombre del tutor}
+\newcommand{\fecha}{Mes, Año}
 
 \newcommand{\membrete}{
-  \normalsize\selectfont
-  \touppercase{\universidad} \par
-  FACULTAD DE INGENIERÍA \par
-  ESCUELA DE INGENIERÍA INFORMÁTICA \par
+  \normalsize\selectfont\bfseries
+  \universidad \par
+  Facultad de Ingeniería \par
+  Escuela de Ingeniería Informática \par
 }
 
 \newcommand{\prelude}{
@@ -25,21 +26,17 @@
     Realizado por & \estudiante \\
     % \\
     Tutor         & \tutor      \\
-    Fecha         & Mes, Año \\
+    Fecha         & \fecha      \\
   \end{tabularx}
 }
 
 \begin{center}
   \begin{figure}[h]
     \centering
-    \begin{minipage}{0.15\textwidth}
-      \includegraphics[width=\textwidth]{ucab-escudo.jpg}
-    \end{minipage}
-    \begin{minipage}{0.7\textwidth}
-      \centering
-      \renewcommand{\baselinestretch}{1.5}
-      \membrete
-    \end{minipage}
+    \includegraphics[width=0.65\textwidth]{ucab-logo.png} \\
+    \centering
+    \renewcommand{\baselinestretch}{1.5}
+    \membrete
   \end{figure}
   \vspace*{\fill}
   \textbf{\titulo}

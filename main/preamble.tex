@@ -119,3 +119,12 @@
   \paragraph*{#1.}
   \addcontentsline{toc}{paragraph}{#1}
 }
+
+\usepackage{calc}
+\renewcommand{\cftfigpresnum}{Figura~}
+\setlength{\cftfignumwidth}{\widthof{Figura IV.1 }}
+\renewcommand{\cftfigaftersnum}{. }
+
+\renewcommand{\cfttabpresnum}{Tabla~}
+\setlength{\cfttabnumwidth}{\widthof{Tabla IV.1 }}
+\renewcommand{\cfttabaftersnum}{. }

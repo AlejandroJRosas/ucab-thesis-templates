@@ -76,7 +76,7 @@
 \newcommand{\upper}[1]{\uppercase{#1}}
 \usepackage{titlesec}
 \titleformat{\chapter}
-{\normalfont\fontsize{12}{15}\bfseries\centering}{}{0.3em}{\upper}[\thispagestyle{empty}]
+{\normalfont\fontsize{12}{15}\bfseries\centering}{}{0.3em}{}[\thispagestyle{empty}]
 \titleformat{\section}
 {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
@@ -90,7 +90,7 @@
 \newcommand{\uchapter}[1]{
 \addtocounter{chapter}{1}
 \phantomsection
-\chapter*{Capítulo \thechapter. \break \\ {#1}}
+\chapter*{Capítulo \thechapter. {#1}}
 \addcontentsline{toc}{chapter}{Capítulo \thechapter. {#1}}
 }
 \newcommand{\uextra}[2]{
